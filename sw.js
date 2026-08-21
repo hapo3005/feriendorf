@@ -1,4 +1,4 @@
-const CACHE = 'feriendorf-intern-v4';
+const CACHE = 'feriendorf-intern-v5';
 const ASSETS = ['./', './index.html', './styles.css', './v02.css', './waldhaus-palette.css', './app.js', './issue-media-demo.js', './manifest.webmanifest', './icon.svg'];
 
 self.addEventListener('install', event => {
