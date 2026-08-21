@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Feriendorf Intern">
+  <rect width="512" height="512" rx="118" fill="#173f35"/>
+  <path d="M111 252 256 132l145 120v139a25 25 0 0 1-25 25h-86V304h-68v112h-86a25 25 0 0 1-25-25V252Z" fill="#f4f7f4"/>
+  <path d="M87 257 256 117l169 140" fill="none" stroke="#f4f7f4" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="357" cy="172" r="48" fill="#d8a24d"/>
+  <path d="M338 172h38M357 153v38" stroke="#173f35" stroke-width="13" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "name": "Feriendorf Intern",
+  "short_name": "Feriendorf",
+  "description": "Die gemeinsame App für Eigentümer im Feriendorf Kerschenbach.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f7f4",
+  "theme_color": "#173f35",
+  "lang": "de-DE",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
