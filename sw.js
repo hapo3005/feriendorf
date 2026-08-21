@@ -1,4 +1,4 @@
-const CACHE = 'feriendorf-intern-v12';
+const CACHE = 'feriendorf-intern-v13';
 const ASSETS = [
   './',
   './index.html',
@@ -11,6 +11,7 @@ const ASSETS = [
   './issue-media-core.js',
   './documents.js',
   './calendar-workspace.js',
+  './votes-workspace.js',
   './manifest.webmanifest',
   './icon.svg',
   './assets/banner-v10-01.svg',
