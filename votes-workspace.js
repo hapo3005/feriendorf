@@ -163,8 +163,6 @@
   document.addEventListener('click', event => {
     const voteAction = event.target.closest('#voteWorkspace [data-dynamic-action="open-vote"]');
     if (voteAction) openSheet('vote');
-    const calendarAction = event.target.closest('#calendarWorkspace [data-action="open-event"]');
-    if (calendarAction) openSheet('event');
   });
 
   const originalRenderVotes = renderVotes;
