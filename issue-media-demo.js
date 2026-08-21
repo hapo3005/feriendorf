@@ -10,5 +10,6 @@
     .then(() => loadScript('./documents.js'))
     .then(() => loadScript('./calendar-workspace.js'))
     .then(() => loadScript('./votes-workspace.js'))
+    .then(() => renderAll())
     .catch(() => console.warn('Demo-Erweiterung konnte nicht geladen werden.'));
 })();
