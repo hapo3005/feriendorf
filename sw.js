@@ -1,5 +1,24 @@
-const CACHE = 'feriendorf-intern-v9';
-const ASSETS = ['./', './index.html', './styles.css', './v02.css', './waldhaus-palette.css', './banner-v9.css', './app.js', './issue-media-demo.js', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'feriendorf-intern-v10';
+const ASSETS = [
+  './',
+  './index.html',
+  './styles.css',
+  './v02.css',
+  './waldhaus-palette.css',
+  './banner-v9.css',
+  './app.js',
+  './issue-media-demo.js',
+  './manifest.webmanifest',
+  './icon.svg',
+  './assets/banner-v10-01.svg',
+  './assets/banner-v10-02.svg',
+  './assets/banner-v10-03.svg',
+  './assets/banner-v10-04.svg',
+  './assets/banner-v10-05.svg',
+  './assets/banner-v10-06.svg',
+  './assets/banner-v10-07.svg',
+  './assets/banner-v10-08.svg'
+];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
