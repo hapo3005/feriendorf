@@ -54,4 +54,39 @@ body{background:radial-gradient(circle at 8% 0%,rgba(184,223,134,.13),transparen
 .more-menu{color:#17201c;background:#fffdf8;border-color:#ded8cb;box-shadow:0 20px 55px rgba(35,42,36,.14)}.more-menu button:hover{background:#f5f1e8}.more-menu button>span{background:#edf4e6;color:#35561f}.more-menu small{color:#737b75}
 .mobile-nav{background:rgba(255,253,248,.95);border-top-color:#ded8cb;box-shadow:0 -10px 30px rgba(34,40,35,.08)}.mobile-nav-item{color:#7f8781}.mobile-nav-item.is-active{color:#07100d;background:#edf4e6}
 .media-picker{background:#faf8f2!important;border-color:#cbd9b8!important}.media-picker:hover{background:#f2f7ea!important;border-color:#9fc66d!important}.media-picker-icon{background:#07100d!important;color:#d6f4a8!important}.media-picker-copy strong{color:#17201c!important}.media-picker-copy small,.media-field-label{color:#6f786f!important}.media-preview,.issue-media-tile{background:#f2eee4!important;border-color:#ded8cb!important}
+
+/* Home banner: supplied Kerschenbach artwork replaces the visual hero while preserving semantic text for assistive tech. */
+.premium-hero{
+  min-height:0;
+  aspect-ratio:2048/682;
+  padding:0;
+  background-image:url('./assets/banner-kerschenbach.webp');
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  background-position:center;
+  border:0;
+  border-radius:clamp(22px,2.2vw,34px);
+  box-shadow:0 24px 62px rgba(12,23,19,.16);
+  overflow:hidden;
+}
+.premium-hero .hero-copy,
+.premium-hero .hero-badge{
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+
 @media(max-width:900px){.topbar{background:rgba(250,247,240,.94)}}
+@media(max-width:620px){
+  .premium-hero{
+    aspect-ratio:2048/682;
+    min-height:0;
+    border-radius:20px;
+  }
+}
