@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#173f35">
+  <meta name="description" content="Feriendorf Intern – die gemeinsame App für Eigentümer im Feriendorf Kerschenbach.">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Feriendorf Intern</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" type="button" data-view-target="home" aria-label="Feriendorf Intern – Startseite">
+        <span class="brand-mark">FI</span>
+        <span class="brand-copy"><strong>Feriendorf Intern</strong><small>Kerschenbach · Eigentümer</small></span>
+      </button>
+      <div class="top-actions">
+        <span class="privacy-pill">Privater Bereich</span>
+        <button class="icon-button" id="installButton" type="button" hidden aria-label="App installieren">↓</button>
+      </div>
+    </header>
+
+    <div class="desktop-layout">
+      <aside class="side-nav" aria-label="Bereiche">
+        <button class="side-nav-item is-active" type="button" data-view-target="home"><span>⌂</span><b>Aktuell</b></button>
+        <button class="side-nav-item" type="button" data-view-target="issues"><span>!</span><b>Schäden</b></button>
+        <button class="side-nav-item" type="button" data-view-target="calendar"><span>◷</span><b>Termine</b></button>
+        <button class="side-nav-item" type="button" data-view-target="votes"><span>✓</span><b>Mitreden</b></button>
+        <button class="side-nav-item" type="button" data-view-target="community"><span>♡</span><b>Gemeinschaft</b></button>
+        <button class="side-nav-item" type="button" data-view-target="documents"><span>▤</span><b>Dokumente</b></button>
+      </aside>
+
+      <main>
+        <section class="view is-active" data-view="home">
+          <div class="hero">
+            <div>
+              <span class="eyebrow">Guten Überblick</span>
+              <h1>Was ist im Feriendorf wichtig?</h1>
+              <p>Neuigkeiten, offene Themen und gemeinsame Termine – ohne WhatsApp-Suche, Rundmails oder doppelte Rückfragen.</p>
+            </div>
+            <div class="hero-badge"><span>⌂</span><div><small>Feriendorf</small><strong>Kerschenbach</strong></div></div>
+          </div>
+
+          <section class="content-section overview-grid" aria-label="Übersicht">
+            <button class="metric-card" type="button" data-view-target="issues"><small>Offene Schäden</small><strong id="metricIssues">0</strong><span>ansehen →</span></button>
+            <button class="metric-card" type="button" data-view-target="calendar"><small>Nächste Termine</small><strong id="metricEvents">0</strong><span>ansehen →</span></button>
+            <button class="metric-card" type="button" data-view-target="votes"><small>Offene Abstimmungen</small><strong id="metricVotes">0</strong><span>mitreden →</span></button>
+          </section>
+
+          <section class="content-section two-column">
+            <article class="panel priority-panel">
+              <div class="panel-head"><div><span class="section-label">Aktuell</span><h2>Wichtig für alle</h2></div></div>
+              <div id="newsList" class="stack-list"></div>
+            </article>
+
+            <article class="panel provider-panel">
+              <div class="provider-icon">↗</div>
+              <span class="section-label">Gemeinsam sparen</span>
+              <h2>Dienstleister ist im Dorf?</h2>
+              <p>Elektriker, Gärtner oder Handwerker kommt ohnehin? Termin eintragen – andere Eigentümer können Bedarf anmelden und Anfahrten bündeln.</p>
+              <button class="button button-primary" type="button" data-action="open-event">Termin eintragen</button>
+            </article>
+          </section>
+
+          <section class="content-section quick-section">
+            <div class="section-heading"><div><span class="section-label">Direkt erledigen</span><h2>Was möchtest du tun?</h2></div></div>
+            <div class="quick-grid">
+              <button class="quick-card" type="button" data-action="open-issue"><span>!</span><strong>Problem melden</strong><small>Foto später ergänzbar</small></button>
+              <button class="quick-card" type="button" data-action="open-event"><span>◷</span><strong>Termin teilen</strong><small>Auch Dienstleister</small></button>
+              <button class="quick-card" type="button" data-action="open-vote"><span>✓</span><strong>Meinung einholen</strong><small>Einfache Abstimmung</small></button>
+              <button class="quick-card" type="button" data-action="open-board"><span>♡</span><strong>Nachbarn fragen</strong><small>Hilfe, Leihen, Tipp</small></button>
+            </div>
+          </section>
+        </section>
+
+        <section class="view" data-view="issues">
+          <div class="page-head"><div><span class="eyebrow">Schäden & Probleme</span><h1>Einmal melden. Status sehen.</h1><p>Gemeinschaftliche Probleme zentral erfassen, statt dieselbe Sache mehrfach weiterzugeben.</p></div><button class="button button-primary" type="button" data-action="open-issue">+ Problem melden</button></div>
+          <section class="content-section"><div id="issueList" class="card-list"></div></section>
+        </section>
+
+        <section class="view" data-view="calendar">
+          <div class="page-head"><div><span class="eyebrow">Termine & Einsätze</span><h1>Was passiert wann?</h1><p>Gemeinschaftstermine und Dienstleisterbesuche an einem Ort.</p></div><button class="button button-primary" type="button" data-action="open-event">+ Termin eintragen</button></div>
+          <section class="content-section"><div id="eventList" class="card-list"></div></section>
+        </section>
+
+        <section class="view" data-view="votes">
+          <div class="page-head"><div><span class="eyebrow">Mitreden</span><h1>Schnell ein Stimmungsbild bekommen.</h1><p>Für einfache Meinungsbilder im Dorf. Rechtlich verbindliche Beschlüsse werden bewusst erst später separat umgesetzt.</p></div><button class="button button-primary" type="button" data-action="open-vote">+ Abstimmung starten</button></div>
+          <section class="content-section"><div id="voteList" class="card-list"></div></section>
+        </section>
+
+        <section class="view" data-view="community">
+          <div class="page-head"><div><span class="eyebrow">Gemeinschaft</span><h1>Nachbarschaft, die funktioniert.</h1><p>Etwas leihen, Hilfe suchen, einen Tipp teilen oder gemeinsame Besorgungen koordinieren.</p></div><button class="button button-primary" type="button" data-action="open-board">+ Beitrag erstellen</button></div>
+          <section class="content-section"><div id="boardList" class="card-list"></div></section>
+        </section>
+
+        <section class="view" data-view="documents">
+          <div class="page-head"><div><span class="eyebrow">Dokumente</span><h1>Wichtige Unterlagen griffbereit.</h1><p>Später liegen hier Protokolle, Regeln, Pläne, Verträge und Formulare – versioniert und für Eigentümer auffindbar.</p></div></div>
+          <section class="content-section">
+            <div class="empty-state documents-empty"><span>▤</span><h2>Noch keine Dokumente hinterlegt</h2><p>Der Dokumentbereich ist vorbereitet. Im nächsten Backend-Schritt können berechtigte Personen Dateien zentral hochladen und verwalten.</p></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile Navigation">
+      <button class="mobile-nav-item is-active" type="button" data-view-target="home"><span>⌂</span><small>Aktuell</small></button>
+      <button class="mobile-nav-item" type="button" data-view-target="issues"><span>!</span><small>Schäden</small></button>
+      <button class="mobile-nav-item" type="button" data-view-target="calendar"><span>◷</span><small>Termine</small></button>
+      <button class="mobile-nav-item" type="button" data-view-target="votes"><span>✓</span><small>Mitreden</small></button>
+      <button class="mobile-nav-item" id="moreButton" type="button"><span>•••</span><small>Mehr</small></button>
+    </nav>
+  </div>
+
+  <div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+  <aside class="sheet" id="formSheet" aria-hidden="true" aria-labelledby="sheetTitle">
+    <button class="sheet-close" id="sheetClose" type="button" aria-label="Schließen">×</button>
+    <span class="section-label" id="sheetLabel">Neu</span>
+    <h2 id="sheetTitle">Eintrag erstellen</h2>
+    <div id="sheetBody"></div>
+  </aside>
+
+  <aside class="more-menu" id="moreMenu" aria-hidden="true">
+    <button type="button" data-view-target="community"><span>♡</span><div><strong>Gemeinschaft</strong><small>Hilfe, Leihen & Tipps</small></div></button>
+    <button type="button" data-view-target="documents"><span>▤</span><div><strong>Dokumente</strong><small>Unterlagen & Protokolle</small></div></button>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
