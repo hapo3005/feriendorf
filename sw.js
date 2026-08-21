@@ -1,5 +1,5 @@
-const CACHE = 'feriendorf-intern-v5';
-const ASSETS = ['./', './index.html', './styles.css', './v02.css', './waldhaus-palette.css', './app.js', './issue-media-demo.js', './manifest.webmanifest', './icon.svg'];
+const CACHE = 'feriendorf-intern-v6';
+const ASSETS = ['./', './index.html', './styles.css', './v02.css', './waldhaus-palette.css', './app.js', './issue-media-demo.js', './manifest.webmanifest', './icon.svg', './assets/banner-kerschenbach.webp'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)));
