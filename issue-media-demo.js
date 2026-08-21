@@ -8,5 +8,6 @@
   });
   loadScript('./issue-media-core.js')
     .then(() => loadScript('./documents.js'))
+    .then(() => loadScript('./calendar-workspace.js'))
     .catch(() => console.warn('Demo-Erweiterung konnte nicht geladen werden.'));
 })();
